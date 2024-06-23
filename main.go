@@ -10,7 +10,7 @@ import (
 // @version         1.0
 // @description     This is a server for app.
 
-// @host      3.145.165.61 :8080
+// @host      3.145.165.61:8080
 //trade this for localhost:8080 or aws domain
 
 // @securityDefinitions.basic  BasicAuth
