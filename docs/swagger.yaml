@@ -1,0 +1,923 @@
+definitions:
+  db.Finances:
+    properties:
+      aliment:
+        type: number
+      best:
+        type: number
+      date:
+        type: string
+      id:
+        type: integer
+      life:
+        type: number
+      score:
+        type: number
+      service:
+        type: number
+      shopping:
+        type: number
+      transport:
+        type: number
+      userid:
+        type: integer
+    type: object
+  db.Health:
+    properties:
+      best:
+        type: integer
+      calories_burned:
+        type: integer
+      date:
+        type: string
+      goal_calories:
+        type: integer
+      healthy_food:
+        type: integer
+      id:
+        type: integer
+      score:
+        type: number
+      unhealthy_food:
+        type: integer
+      userid:
+        type: integer
+    type: object
+  db.Mental:
+    properties:
+      best:
+        type: integer
+      date:
+        type: string
+      depression_score:
+        type: integer
+      id:
+        type: integer
+      mindfulness_score:
+        type: integer
+      quality_of_sleep:
+        type: integer
+      score:
+        type: number
+      smoking_frequency:
+        type: integer
+      stress_score:
+        type: integer
+      userid:
+        type: integer
+    type: object
+  db.User:
+    properties:
+      bmi:
+        type: number
+      email:
+        type: string
+      finances:
+        type: number
+      health:
+        type: number
+      height:
+        type: number
+      id:
+        type: integer
+      mental:
+        type: number
+      name:
+        type: string
+      score:
+        type: number
+      weight:
+        type: number
+      welfare:
+        type: number
+    type: object
+  db.Welfare:
+    properties:
+      best:
+        type: integer
+      date:
+        type: string
+      goal_hours_slept:
+        type: number
+      goal_steps:
+        type: integer
+      hours_slept:
+        type: number
+      id:
+        type: integer
+      max_smoking_frequency:
+        type: integer
+      score:
+        type: number
+      smoking_frequency:
+        type: integer
+      steps:
+        type: integer
+      userid:
+        type: integer
+    type: object
+  interfaces.InputBMI:
+    properties:
+      bmi:
+        type: number
+    type: object
+  interfaces.InputFinances:
+    properties:
+      aliment:
+        type: number
+      best:
+        type: number
+      life:
+        type: number
+      score:
+        type: number
+      service:
+        type: number
+      shopping:
+        type: number
+      transport:
+        type: number
+      userid:
+        type: integer
+    type: object
+  interfaces.InputFinancesEdit:
+    properties:
+      aliment:
+        type: number
+      best:
+        type: number
+      id:
+        type: integer
+      life:
+        type: number
+      score:
+        type: number
+      service:
+        type: number
+      shopping:
+        type: number
+      transport:
+        type: number
+      userid:
+        type: integer
+    type: object
+  interfaces.InputHealth:
+    properties:
+      best:
+        type: integer
+      calories_burned:
+        type: integer
+      goal_calories:
+        type: integer
+      healthy_food:
+        type: integer
+      score:
+        type: number
+      unhealthy_food:
+        type: integer
+      userid:
+        type: integer
+    type: object
+  interfaces.InputHealthEdit:
+    properties:
+      best:
+        type: integer
+      calories_burned:
+        type: integer
+      goal_calories:
+        type: integer
+      healthy_food:
+        type: integer
+      id:
+        type: integer
+      score:
+        type: number
+      unhealthy_food:
+        type: integer
+      userid:
+        type: integer
+    type: object
+  interfaces.InputMental:
+    properties:
+      best:
+        type: integer
+      depression_score:
+        type: integer
+      id:
+        type: integer
+      mindfulness_score:
+        type: integer
+      quality_of_sleep:
+        type: integer
+      score:
+        type: number
+      smoking_frequency:
+        type: integer
+      stress_score:
+        type: integer
+      userid:
+        type: integer
+    type: object
+  interfaces.InputMentalEdit:
+    properties:
+      best:
+        type: integer
+      depression_score:
+        type: integer
+      id:
+        type: integer
+      mindfulness_score:
+        type: integer
+      quality_of_sleep:
+        type: integer
+      score:
+        type: number
+      smoking_frequency:
+        type: integer
+      stress_score:
+        type: integer
+      userid:
+        type: integer
+    type: object
+  interfaces.InputUser:
+    properties:
+      bmi:
+        type: number
+      email:
+        type: string
+      height:
+        type: number
+      name:
+        type: string
+      weight:
+        type: number
+    type: object
+  interfaces.InputUserEdit:
+    properties:
+      bmi:
+        type: number
+      email:
+        type: string
+      finances:
+        type: number
+      health:
+        type: number
+      height:
+        type: number
+      id:
+        type: integer
+      mental:
+        type: number
+      name:
+        type: string
+      score:
+        type: number
+      weight:
+        type: number
+      welfare:
+        type: number
+    type: object
+  interfaces.InputWelfare:
+    properties:
+      best:
+        type: integer
+      goal_hours_slept:
+        type: number
+      goal_steps:
+        type: integer
+      hours_slept:
+        type: number
+      max_smoking_frequency:
+        type: integer
+      score:
+        type: number
+      smoking_frequency:
+        type: integer
+      steps:
+        type: integer
+      userid:
+        type: integer
+    type: object
+  interfaces.InputWelfareEdit:
+    properties:
+      best:
+        type: integer
+      goal_hours_slept:
+        type: number
+      goal_steps:
+        type: integer
+      hours_slept:
+        type: number
+      id:
+        type: integer
+      max_smoking_frequency:
+        type: integer
+      score:
+        type: number
+      smoking_frequency:
+        type: integer
+      steps:
+        type: integer
+      userid:
+        type: integer
+    type: object
+externalDocs:
+  description: OpenAPI
+  url: https://swagger.io/resources/open-api/
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a server for app.
+  title: Peru
+  version: "1.0"
+paths:
+  /api/Health:
+    put:
+      consumes:
+      - application/json
+      description: Retrieve an Health by its ID
+      parameters:
+      - description: Edit Health
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputHealthEdit'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Health Details
+          schema:
+            $ref: '#/definitions/db.Health'
+      summary: Retrieve Health by ID
+      tags:
+      - Health
+  /api/all-finances:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all Finances
+      parameters:
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All Finances
+          schema:
+            $ref: '#/definitions/db.Finances'
+      summary: Retrieve All Finances
+      tags:
+      - Finances
+  /api/all-health:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all health
+      parameters:
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All Health
+          schema:
+            $ref: '#/definitions/db.Health'
+      summary: Retrieve All health
+      tags:
+      - health
+  /api/all-mental:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all Mental
+      parameters:
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All Mental
+          schema:
+            $ref: '#/definitions/db.Mental'
+      summary: Retrieve All Mental
+      tags:
+      - Mental
+  /api/all-user:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all User
+      parameters:
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All User
+          schema:
+            $ref: '#/definitions/db.User'
+      summary: Retrieve All User
+      tags:
+      - User
+  /api/all-welfare:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all welfare
+      parameters:
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All welfare
+          schema:
+            $ref: '#/definitions/db.Welfare'
+      summary: Retrieve All welfare
+      tags:
+      - welfare
+  /api/bmi:
+    get:
+      consumes:
+      - application/json
+      description: Check your bmi
+      parameters:
+      - description: BMI :)
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputBMI'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: User Details
+          schema:
+            $ref: '#/definitions/db.User'
+      summary: BMI Checker
+      tags:
+      - User
+  /api/finances:
+    post:
+      consumes:
+      - application/json
+      description: Create New Finances
+      parameters:
+      - description: Data for create new Finances
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputFinances'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All Assets
+          schema:
+            $ref: '#/definitions/db.Finances'
+      summary: Create New Finances
+      tags:
+      - Finances
+    put:
+      consumes:
+      - application/json
+      description: Retrieve an Finances by its ID
+      parameters:
+      - description: Edit Finances
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputFinancesEdit'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Finances Details
+          schema:
+            $ref: '#/definitions/db.Finances'
+      summary: Retrieve Finances by ID
+      tags:
+      - Finances
+  /api/finances/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve an Finances by its ID
+      parameters:
+      - description: Finances ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Finances Details
+          schema:
+            $ref: '#/definitions/db.Finances'
+      summary: Retrieve Finances by ID
+      tags:
+      - Finances
+  /api/health:
+    post:
+      consumes:
+      - application/json
+      description: Create New Health
+      parameters:
+      - description: Data for create new Health
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputHealth'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All Health
+          schema:
+            $ref: '#/definitions/db.Health'
+      summary: Create New Health
+      tags:
+      - Health
+  /api/health/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve an health by its ID
+      parameters:
+      - description: health ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Health Details
+          schema:
+            $ref: '#/definitions/db.Health'
+      summary: Retrieve health by ID
+      tags:
+      - health
+  /api/mental:
+    post:
+      consumes:
+      - application/json
+      description: Create New Mental
+      parameters:
+      - description: Data for create new Mental
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputMental'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All Mental
+          schema:
+            $ref: '#/definitions/db.Mental'
+      summary: Create New Mental
+      tags:
+      - Mental
+    put:
+      consumes:
+      - application/json
+      description: Retrieve an mental by its ID
+      parameters:
+      - description: Edit mental
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputMentalEdit'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: mental Details
+          schema:
+            $ref: '#/definitions/db.Mental'
+      summary: Retrieve mental by ID
+      tags:
+      - mental
+  /api/mental/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve an mental by its ID
+      parameters:
+      - description: mental ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: mental Details
+          schema:
+            $ref: '#/definitions/db.Mental'
+      summary: Retrieve mental by ID
+      tags:
+      - mental
+  /api/test-token:
+    post:
+      consumes:
+      - application/json
+      description: Cria um toke para auth do usuario
+      parameters:
+      - default: Bearer <token>
+        description: Token de autenticação
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'token make:'
+          schema:
+            type: string
+      summary: Test Token
+      tags:
+      - Auth
+  /api/user:
+    post:
+      consumes:
+      - application/json
+      description: Create New User
+      parameters:
+      - description: Data for create new User
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputUser'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All User
+          schema:
+            $ref: '#/definitions/db.User'
+      summary: Create New User
+      tags:
+      - User
+    put:
+      consumes:
+      - application/json
+      description: Retrieve an User by its ID
+      parameters:
+      - description: Edit User
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputUserEdit'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: User Details
+          schema:
+            $ref: '#/definitions/db.User'
+      summary: Retrieve User by ID
+      tags:
+      - User
+  /api/user/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve an User by its ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: User Details
+          schema:
+            $ref: '#/definitions/db.User'
+      summary: Retrieve User by ID
+      tags:
+      - User
+  /api/welfare:
+    post:
+      consumes:
+      - application/json
+      description: Create New welfare
+      parameters:
+      - description: Data for create new welfare
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputWelfare'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of All welfare
+          schema:
+            $ref: '#/definitions/db.Welfare'
+      summary: Create New welfare
+      tags:
+      - welfare
+    put:
+      consumes:
+      - application/json
+      description: Retrieve an welfare by its ID
+      parameters:
+      - description: Edit welfare
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/interfaces.InputWelfareEdit'
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: welfare Details
+          schema:
+            $ref: '#/definitions/db.Welfare'
+      summary: Retrieve welfare by ID
+      tags:
+      - welfare
+  /api/welfare/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve an welfare by its ID
+      parameters:
+      - description: welfare ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - default: Bearer <token>
+        description: Auth Token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: welfare Details
+          schema:
+            $ref: '#/definitions/db.Welfare'
+      summary: Retrieve welfare by ID
+      tags:
+      - welfare
+  /token:
+    get:
+      consumes:
+      - application/json
+      description: Cria um toke para auth do usuario
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'token make:'
+          schema:
+            type: string
+      summary: Criar token de auth
+      tags:
+      - Auth
+securityDefinitions:
+  BasicAuth:
+    type: basic
+swagger: "2.0"
