@@ -100,7 +100,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "health"
+                    "Health"
                 ],
                 "summary": "Retrieve All health",
                 "parameters": [
@@ -199,7 +199,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "welfare"
+                    "Welfare"
                 ],
                 "summary": "Retrieve All welfare",
                 "parameters": [
@@ -438,7 +438,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "health"
+                    "Health"
                 ],
                 "summary": "Retrieve health by ID",
                 "parameters": [
@@ -478,7 +478,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "mental"
+                    "Mental"
                 ],
                 "summary": "Retrieve mental by ID",
                 "parameters": [
@@ -560,7 +560,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "mental"
+                    "Mental"
                 ],
                 "summary": "Retrieve mental by ID",
                 "parameters": [
@@ -816,7 +816,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "welfare"
+                    "Welfare"
                 ],
                 "summary": "Retrieve welfare by ID",
                 "parameters": [
@@ -856,7 +856,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "welfare"
+                    "Welfare"
                 ],
                 "summary": "Create New welfare",
                 "parameters": [
@@ -898,7 +898,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "welfare"
+                    "Welfare"
                 ],
                 "summary": "Retrieve welfare by ID",
                 "parameters": [

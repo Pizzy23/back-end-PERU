@@ -59,7 +59,7 @@ func PullAllMental(c *gin.Context) {
 
 // @Summary Retrieve mental by ID
 // @Description Retrieve an mental by its ID
-// @Tags mental
+// @Tags Mental
 // @Accept json
 // @Produce json
 // @Param id path int true "mental ID"
@@ -79,7 +79,7 @@ func PullMentalId(c *gin.Context) {
 
 // @Summary Retrieve mental by ID
 // @Description Retrieve an mental by its ID
-// @Tags mental
+// @Tags Mental
 // @Accept json
 // @Produce json
 // @Param request body interfaces.InputMentalEdit true "Edit mental"

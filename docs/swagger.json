@@ -93,7 +93,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "health"
+                    "Health"
                 ],
                 "summary": "Retrieve All health",
                 "parameters": [
@@ -192,7 +192,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "welfare"
+                    "Welfare"
                 ],
                 "summary": "Retrieve All welfare",
                 "parameters": [
@@ -431,7 +431,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "health"
+                    "Health"
                 ],
                 "summary": "Retrieve health by ID",
                 "parameters": [
@@ -471,7 +471,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "mental"
+                    "Mental"
                 ],
                 "summary": "Retrieve mental by ID",
                 "parameters": [
@@ -553,7 +553,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "mental"
+                    "Mental"
                 ],
                 "summary": "Retrieve mental by ID",
                 "parameters": [
@@ -809,7 +809,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "welfare"
+                    "Welfare"
                 ],
                 "summary": "Retrieve welfare by ID",
                 "parameters": [
@@ -849,7 +849,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "welfare"
+                    "Welfare"
                 ],
                 "summary": "Create New welfare",
                 "parameters": [
@@ -891,7 +891,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "welfare"
+                    "Welfare"
                 ],
                 "summary": "Retrieve welfare by ID",
                 "parameters": [

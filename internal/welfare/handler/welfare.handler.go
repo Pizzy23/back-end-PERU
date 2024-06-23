@@ -11,7 +11,7 @@ import (
 
 // @Summary Create New welfare
 // @Description Create New welfare
-// @Tags welfare
+// @Tags Welfare
 // @Accept json
 // @Produce json
 // @Param request body interfaces.InputWelfare true "Data for create new welfare"
@@ -47,7 +47,7 @@ func CreateWelfare(c *gin.Context) {
 
 // @Summary Retrieve All welfare
 // @Description Retrieve all welfare
-// @Tags welfare
+// @Tags Welfare
 // @Accept json
 // @Produce json
 // @Param Authorization header string true "Auth Token" default(Bearer <token>)
@@ -59,7 +59,7 @@ func PullAllWelfare(c *gin.Context) {
 
 // @Summary Retrieve welfare by ID
 // @Description Retrieve an welfare by its ID
-// @Tags welfare
+// @Tags Welfare
 // @Accept json
 // @Produce json
 // @Param id path int true "welfare ID"
@@ -79,7 +79,7 @@ func PullWelfareId(c *gin.Context) {
 
 // @Summary Retrieve welfare by ID
 // @Description Retrieve an welfare by its ID
-// @Tags welfare
+// @Tags Welfare
 // @Accept json
 // @Produce json
 // @Param request body interfaces.InputWelfareEdit true "Edit welfare"

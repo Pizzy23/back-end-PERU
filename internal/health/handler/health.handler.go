@@ -47,7 +47,7 @@ func CreateHealth(c *gin.Context) {
 
 // @Summary Retrieve All health
 // @Description Retrieve all health
-// @Tags health
+// @Tags Health
 // @Accept json
 // @Produce json
 // @Param Authorization header string true "Auth Token" default(Bearer <token>)
@@ -59,7 +59,7 @@ func PullAllHealth(c *gin.Context) {
 
 // @Summary Retrieve health by ID
 // @Description Retrieve an health by its ID
-// @Tags health
+// @Tags Health
 // @Accept json
 // @Produce json
 // @Param id path int true "health ID"

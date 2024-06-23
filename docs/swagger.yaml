@@ -402,7 +402,7 @@ paths:
             $ref: '#/definitions/db.Health'
       summary: Retrieve All health
       tags:
-      - health
+      - Health
   /api/all-mental:
     get:
       consumes:
@@ -468,7 +468,7 @@ paths:
             $ref: '#/definitions/db.Welfare'
       summary: Retrieve All welfare
       tags:
-      - welfare
+      - Welfare
   /api/bmi:
     get:
       consumes:
@@ -633,7 +633,7 @@ paths:
             $ref: '#/definitions/db.Health'
       summary: Retrieve health by ID
       tags:
-      - health
+      - Health
   /api/mental:
     post:
       consumes:
@@ -688,7 +688,7 @@ paths:
             $ref: '#/definitions/db.Mental'
       summary: Retrieve mental by ID
       tags:
-      - mental
+      - Mental
   /api/mental/{id}:
     get:
       consumes:
@@ -715,7 +715,7 @@ paths:
             $ref: '#/definitions/db.Mental'
       summary: Retrieve mental by ID
       tags:
-      - mental
+      - Mental
   /api/test-token:
     post:
       consumes:
@@ -889,7 +889,7 @@ paths:
             $ref: '#/definitions/db.Welfare'
       summary: Create New welfare
       tags:
-      - welfare
+      - Welfare
     put:
       consumes:
       - application/json
@@ -916,7 +916,7 @@ paths:
             $ref: '#/definitions/db.Welfare'
       summary: Retrieve welfare by ID
       tags:
-      - welfare
+      - Welfare
   /api/welfare/{id}:
     get:
       consumes:
@@ -943,7 +943,7 @@ paths:
             $ref: '#/definitions/db.Welfare'
       summary: Retrieve welfare by ID
       tags:
-      - welfare
+      - Welfare
   /token:
     get:
       consumes:
