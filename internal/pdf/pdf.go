@@ -13,11 +13,6 @@ import (
 type PDFReader struct{}
 
 func (p *PDFReader) ExtractPages(pdfPath string) ([]string, error) {
-	uniPdfLicenseKey := os.Getenv("API_KEY")
-	err := license.SetMeteredKey(uniPdfLicenseKey)
-	if err != nil {
-		return nil, fmt.Errorf("error setting license key: %v", err)
-	}
 
 	file, err := os.Open(pdfPath)
 	if err != nil {
@@ -60,4 +55,12 @@ func (p *PDFReader) ExtractPages(pdfPath string) ([]string, error) {
 
 func (p *PDFReader) ArrayForText(array []string) string {
 	return strings.Join(array, " ")
+}
+
+func SetLicense() {
+	uniPdfLicenseKey := os.Getenv("API_KEY")
+	err := license.SetMeteredKey(uniPdfLicenseKey)
+	if err != nil {
+		fmt.Errorf("error setting license key: %v", err)
+	}
 }

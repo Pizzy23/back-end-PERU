@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"peru/db"
+	"peru/internal/pdf"
 	"peru/middleware"
 )
 
@@ -19,6 +20,8 @@ import (
 // @externalDocs.url          https://swagger.io/resources/open-api/
 
 func main() {
+	pdf.SetLicense()
+
 	r := middleware.SetupRouter()
 
 	db.ConnectDatabase()
