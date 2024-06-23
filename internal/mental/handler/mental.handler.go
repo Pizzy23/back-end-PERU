@@ -89,12 +89,14 @@ func PullMentalId(c *gin.Context) {
 func EditMental(c *gin.Context) {
 	var mentalInput interfaces.InputMentalEdit
 	if err := c.ShouldBindJSON(&mentalInput); err != nil {
-		c.JSON(http.StatusNotAcceptable, gin.H{"error": "Parameters are invalid, need a JSON"})
+		c.Set("Response", "Parameters are invalid, need a JSON")
+		c.Status(http.StatusBadRequest)
 		return
 	}
 
 	if err := mental.EditMentalService(c, mentalInput); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		c.Set("Response", err.Error())
+		c.Status(http.StatusInternalServerError)
 		return
 	}
 	c.Set("Response", "Event created successfully")

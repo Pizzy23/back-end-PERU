@@ -324,7 +324,7 @@ definitions:
 externalDocs:
   description: OpenAPI
   url: https://swagger.io/resources/open-api/
-host: localhost:8080
+host: 3.145.165.61 :8080
 info:
   contact: {}
   description: This is a server for app.
@@ -917,6 +917,42 @@ paths:
       summary: Criar token de auth
       tags:
       - Auth
+  /upload:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Uploads a PDF file, extracts its text, and saves the extracted
+        text
+      parameters:
+      - description: PDF file
+        in: formData
+        name: pdf
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Upload a PDF file and extract text
+      tags:
+      - PDF
 securityDefinitions:
   BasicAuth:
     type: basic
