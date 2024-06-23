@@ -26,15 +26,7 @@ func CreateMental(c *gin.Context) {
 		c.Status(http.StatusInternalServerError)
 		return
 	}
-	if err := c.ShouldBindJSON(&mentalInput); err != nil {
 
-		return
-	}
-
-	if err := mental.CreateMentalServices(c, mentalInput); err != nil {
-
-		return
-	}
 	if err := mental.CreateMentalServices(c, mentalInput); err != nil {
 		c.Set("Error", err.Error())
 		c.Status(http.StatusInternalServerError)

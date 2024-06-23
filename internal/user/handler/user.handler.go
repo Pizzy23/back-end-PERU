@@ -26,10 +26,6 @@ func CreateUser(c *gin.Context) {
 		c.Status(http.StatusInternalServerError)
 		return
 	}
-	if err := c.ShouldBindJSON(&UserInput); err != nil {
-
-		return
-	}
 
 	if err := user.CreateUserServices(c, UserInput); err != nil {
 
@@ -89,12 +85,14 @@ func PullUserId(c *gin.Context) {
 func EditUser(c *gin.Context) {
 	var UserInput interfaces.InputUserEdit
 	if err := c.ShouldBindJSON(&UserInput); err != nil {
-		c.JSON(http.StatusNotAcceptable, gin.H{"error": "Parameters are invalid, need a JSON"})
+		c.Set("Response", "Parameters are invalid, need a JSON")
+		c.Status(http.StatusBadRequest)
 		return
 	}
 
 	if err := user.EditUserService(c, UserInput); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		c.Set("Response", err.Error())
+		c.Status(http.StatusInternalServerError)
 		return
 	}
 	c.Set("Response", "Event created successfully")
@@ -113,7 +111,8 @@ func EditUser(c *gin.Context) {
 func BMI(c *gin.Context) {
 	var bmiInput interfaces.InputBMI
 	if err := c.ShouldBindJSON(&bmiInput); err != nil {
-		c.JSON(http.StatusNotAcceptable, gin.H{"error": "Parameters are invalid, need a JSON"})
+		c.Set("Response", "Parameters are invalid, need a JSON")
+		c.Status(http.StatusBadRequest)
 		return
 	}
 	user.CheckBMI(c, bmiInput)

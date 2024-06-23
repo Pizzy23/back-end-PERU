@@ -26,10 +26,6 @@ func CreateHealth(c *gin.Context) {
 		c.Status(http.StatusInternalServerError)
 		return
 	}
-	if err := c.ShouldBindJSON(&healthInput); err != nil {
-
-		return
-	}
 
 	if err := health.CreateHealthServices(c, healthInput); err != nil {
 
@@ -89,12 +85,14 @@ func PullHealthId(c *gin.Context) {
 func EditHealth(c *gin.Context) {
 	var HealthInput interfaces.InputHealthEdit
 	if err := c.ShouldBindJSON(&HealthInput); err != nil {
-		c.JSON(http.StatusNotAcceptable, gin.H{"error": "Parameters are invalid, need a JSON"})
+		c.Set("Response", "Parameters are invalid, need a JSON")
+		c.Status(http.StatusBadRequest)
 		return
 	}
 
 	if err := health.EditHealthService(c, HealthInput); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		c.Set("Response", err.Error())
+		c.Status(http.StatusInternalServerError)
 		return
 	}
 	c.Set("Response", "Event created successfully")
