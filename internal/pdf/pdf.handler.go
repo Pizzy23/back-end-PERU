@@ -18,7 +18,7 @@ import (
 // @Produce json
 // @Param pdf formData file true "PDF file"
 // @Param Authorization header string true "Auth Token" default(Bearer <token>)
-// @Success 200 {object} map[string]string
+// @Success 200 {object} map[string]interface{}
 // @Failure 400 {object} map[string]string
 // @Failure 500 {object} map[string]string
 // @Router /api/upload [post]
@@ -60,6 +60,19 @@ func UploadHandler(c *gin.Context) {
 		return
 	}
 
-	c.Set("Response", "File uploaded and processed successfully")
+	extractedText, err := ioutil.ReadFile(textFilePath)
+	if err != nil {
+		c.Set("Response", "Could not read extracted text")
+		c.Status(http.StatusInternalServerError)
+		return
+	}
+
+	response := map[string]interface{}{
+		"message":        "File uploaded and processed successfully",
+		"text_file":      textFilePath,
+		"extracted_text": string(extractedText),
+	}
+
+	c.Set("Response", response)
 	c.Status(http.StatusOK)
 }
