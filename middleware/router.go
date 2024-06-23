@@ -6,6 +6,7 @@ import (
 	finances "peru/internal/finances/handler"
 	health "peru/internal/health/handler"
 	mental "peru/internal/mental/handler"
+	"peru/internal/pdf"
 	user "peru/internal/user/handler"
 	welfare "peru/internal/welfare/handler"
 
@@ -65,5 +66,7 @@ func SetupRouter() *gin.Engine {
 	auth.GET("/user/:id", user.PullUserId)
 	auth.GET("/bmi/:id", user.BMI)
 	auth.PUT("/user", user.EditUser)
+
+	auth.POST("/upload", pdf.UploadHandler)
 	return r
 }

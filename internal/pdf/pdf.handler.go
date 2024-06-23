@@ -17,10 +17,11 @@ import (
 // @Accept multipart/form-data
 // @Produce json
 // @Param pdf formData file true "PDF file"
+// @Param Authorization header string true "Auth Token" default(Bearer <token>)
 // @Success 200 {object} map[string]string
 // @Failure 400 {object} map[string]string
 // @Failure 500 {object} map[string]string
-// @Router /upload [post]
+// @Router /api/upload [post]
 func UploadHandler(c *gin.Context) {
 	file, err := c.FormFile("pdf")
 	if err != nil {
